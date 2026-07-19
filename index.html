@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Concord SMP S4</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&display=swap" rel="stylesheet">
     <style>
         :root {
             --accent: #ED5001;
@@ -14,87 +17,139 @@
             --text-primary: #FFFDF7;
             --text-secondary: #C8C0B0;
             --border: #3A3A3A;
-            /* Using a clean system sans-serif stack instead of Lora */
-            --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            --font-heading: 'Amatic SC', cursive;
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --font-accent: 'Fraunces', serif;
         }
 
         body {
             background-color: var(--bg-primary);
             color: var(--text-primary);
-            font-family: var(--font-body);
-            line-height: 1.5;
+            font-family: var(--font-main);
+            line-height: 1.6;
             margin: 0;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
         .wrapper {
-            max-width: 800px;
-            margin: 40px auto;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
-        h1, h2, h3 { font-family: var(--font-heading); color: var(--accent); }
-        h1 { font-size: 3.5rem; margin-bottom: 0.5rem; }
-        
+        header {
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-family: var(--font-accent);
+            font-size: 3rem;
+            margin: 0;
+            color: var(--accent);
+            letter-spacing: -0.02em;
+        }
+
+        .nav {
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            font-family: var(--font-accent);
+        }
+
+        .nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-right: 15px;
+            text-transform: lowercase;
+        }
+
+        .nav a:hover {
+            color: var(--accent);
+        }
+
         .ip-card {
             background: var(--bg-secondary);
             border: 1px solid var(--border);
             padding: 2rem;
             text-align: center;
-            margin-bottom: 2rem;
         }
 
-        code { font-size: 1.5rem; display: block; margin-top: 10px; color: var(--text-primary); }
+        code {
+            display: block;
+            font-size: 1.2rem;
+            margin: 10px 0;
+            color: var(--text-primary);
+            font-family: monospace;
+        }
 
         .btn {
             background: var(--accent);
             color: white;
             border: none;
-            padding: 10px 20px;
-            font-family: var(--font-heading);
-            font-size: 1.2rem;
+            padding: 8px 16px;
             cursor: pointer;
-            margin-top: 15px;
+            font-family: var(--font-accent);
+            font-size: 1rem;
         }
 
-        .btn:hover { background: var(--accent-hover); }
+        .btn:hover {
+            background: var(--accent-hover);
+        }
 
-        .section { margin-top: 3rem; }
-        
-        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
-        td, th { text-align: left; padding: 10px; border-bottom: 1px solid var(--border); }
+        .section {
+            margin-top: 3rem;
+        }
+
+        h2 {
+            font-family: var(--font-accent);
+            font-size: 2rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 8px 0;
+            color: var(--text-secondary);
+        }
 
         .rank-card {
             background: var(--card-bg);
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-            border-left: 4px solid var(--accent);
+            padding: 1.2rem;
+            margin-bottom: 0.5rem;
+            border: 1px solid var(--border);
         }
 
-        .nav { margin-bottom: 3rem; font-family: var(--font-heading); font-size: 1.2rem; }
-        .nav a { color: var(--text-secondary); text-decoration: none; margin-right: 20px; }
+        .rank-card h3 {
+            font-family: var(--font-accent);
+            margin: 0 0 5px 0;
+            font-size: 1.3rem;
+        }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="wrapper">
     <nav class="nav">
-        <a href="#">CONCORD S4</a>
-        <a href="https://discord.gg/yGWrR35m7h">DISCORD</a>
+        <a href="#">home</a>
+        <a href="https://discord.gg/yGWrR35m7h">discord</a>
     </nav>
 
-    <h1>Concord SMP S4</h1>
-    <p>Java Edition 1.26.1+</p>
+    <header>
+        <h1>Concord SMP S4</h1>
+        <p>Java Edition 1.26.1+</p>
+    </header>
 
     <div class="ip-card">
         Server Address
         <code>vitality-iron.gl.joinmc.link</code>
-        <button class="btn" id="copyBtn">COPY IP</button>
+        <button class="btn" id="copyBtn">copy ip</button>
     </div>
 
     <div class="section">
-        <h2>Quick Info</h2>
+        <h2>Details</h2>
         <table>
             <tr><td>Gamemode</td><td>Survival</td></tr>
             <tr><td>Focus</td><td>Guilds, Economy, Community</td></tr>
@@ -102,8 +157,8 @@
     </div>
 
     <div class="section">
-        <h2>Support & Ranks</h2>
-        <p>DM your username on Discord to order. CashApp: <code>$callenflynn151</code></p>
+        <h2>Ranks</h2>
+        <p>DM your username on Discord. CashApp: <code>$callenflynn151</code></p>
         
         <div class="rank-card">
             <h3>VIP ($8)</h3>
@@ -124,8 +179,8 @@
     document.getElementById('copyBtn').onclick = () => {
         navigator.clipboard.writeText('vitality-iron.gl.joinmc.link');
         const b = document.getElementById('copyBtn');
-        b.innerText = 'COPIED!';
-        setTimeout(() => b.innerText = 'COPY IP', 2000);
+        b.innerText = 'copied!';
+        setTimeout(() => b.innerText = 'copy ip', 2000);
     };
 </script>
 
